@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HungerHack - Saving Food, Saving the Planet</title>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+   <div class="language-toggle" onclick="toggleLanguage()"><button>EN | বাংলা</button></div>
+ <header role="banner">
+    <div class="header-container">
+      <img src="hungerhack logo.png" alt="HungerHack logo" class="logo">
+      <div>
+        <h1 id="logo">HungerHack</h1>
+        <div class="tagline" id="tagline">Saving food, saving the planet</div>
+      </div>
+      </div>
+      <div class="header-buttons">
+  <a href="/login" class="btn btn-outline">Sign Up / Login</a>
+  <a href="/donate" class="btn btn-primary">Donate</a>
+</div>
+    </div>
+  </header>
+
+  
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="nav-links">
+      <a href="#" id="nav-home">Home</a>
+      <a href="#" id="nav-learn">About</a>
+      <a href="#" id="nav-blog">Blog</a>
+      <a href="#" id="nav-contact">Contact</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search food tips, recipes..." />
+      <button onclick="searchContent()">Search</button>
+    </div>
+  </nav>
+
+  <section class="hero fade-in">
+  
+    <h2 id="hero-title">Track Your Food Waste</h2>
+    <p id="hero-desc">Discover how easy it is to reduce food waste, manage your pantry smartly, and find new recipes with your leftovers.</p>
+    <button id="hero-btn" onclick="openModal('Get Started', 'Join HungerHack today and start reducing food waste!')">Get Started</button>
+  </section>
+
+  <section class="features fade-in">
+
+    <div class="feature-card">
+      <h3 id="feature1-title">🗑️ Food Waste Tracker</h3>
+      <p id="feature1-desc">Log your waste, track it by category, and see visual insights into what you're throwing out.</p>
+    </div>
+    <div class="feature-card">
+      <h3 id="feature2-title">🧺 Smart Pantry</h3>
+      <p id="feature2-desc">Keep tabs on your pantry items with expiry alerts and avoid wasting valuable food.</p>
+    </div>
+    <div class="feature-card">
+      <h3 id="feature3-title">🍳 Recipe Suggestions</h3>
+      <p id="feature3-desc">Enter your leftover ingredients and discover recipes you can make right now.</p>
+    </div>
+    <div class="feature-card">
+      <h3 id="feature4-title">📚 Educational Tools</h3>
+      <p id="feature4-desc">Learn how to reduce waste, store food better, and take on fun no-waste challenges.</p>
+    </div>
+  </section>
+ <section class="testimonials fade-in">
+  <h2>What Our Users Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial active">
+      <p>“HungerHack helped me reduce food waste at home by over 50%!”</p>
+      <span>- Ayesha, Dhaka</span>
+    </div>
+    <div class="testimonial">
+      <p>“I love the recipe suggestions. They're practical and save money.”</p>
+      <span>- Rahim, Chittagong</span>
+    </div>
+    <div class="testimonial">
+      <p>“The pantry tracking feature is a game-changer for my busy kitchen.”</p>
+      <span>- Nusrat, Sylhet</span>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="testimonial-nav prev" aria-label="Previous testimonial">&#10094;</button>
+    <button class="testimonial-nav next" aria-label="Next testimonial">&#10095;</button>
+
+    <!-- Dot Indicators -->
+    <div class="testimonial-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </div>
+</section>
+<section class="what-we-do-section fade-in">
+  <h2>What We Do</h2>
+  <div class="what-we-do-grid">
+    <div class="what-we-do-card">
+      <img src="rescue1.jpg" alt="We Rescue Food" />
+      <h3>We Rescue Food</h3>
+      <p>
+        Using our web-based app, we engage volunteers to transfer fresh food surpluses
+        from local businesses to social service agencies serving the food insecure.
+      </p>
+      <a href="#" class="what-we-do-link">BECOME A FOOD RESCUER</a>
+    </div>
+    <div class="what-we-do-card">
+      <img src="rescue2.jpg" alt="We Help the Environment" />
+      <h3>We Help the Environment</h3>
+      <p>
+        Food waste remains one of the top solutions to global warming. Currently,
+        food waste contributes 8 percent of total global greenhouse gas emissions.
+      </p>
+      <a href="#" class="what-we-do-link">BECOME A FOOD DONOR</a>
+    </div>
+    <div class="what-we-do-card">
+      <img src="rescue3.avif" alt="We Create Community" />
+      <h3>We Create Community</h3>
+      <p>
+        Our model empowers communities to serve themselves with the support of our app.
+        All food donors, rescuers, and partners are local members where we operate.
+      </p>
+      <a href="#" class="what-we-do-link">START A HUNGERHACK SITE</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats fade-in">
+  <h2>HungerHack Lifetime Numbers</h2>
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="icon">🍽️</div>
+      <div class="counter" data-target="5400">0</div>
+      <p>Meals Saved</p>
+    </div>
+    <div class="stat">
+      <div class="icon">👥</div>
+      <div class="counter" data-target="2100">0</div>
+      <p>Users Joined</p>
+    </div>
+    <div class="stat">
+      <div class="icon">🏆</div>
+      <div class="counter" data-target="800">0</div>
+      <p>Recipes Suggested</p>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+  <img src="hungerhack logo.png" alt="HungerHack Logo" />
+  <div>
+    <a href="#" id="footer-about">About Us</a> |
+    <a href="#" id="footer-privacy">Privacy Policy</a> |
+    <a href="#" id="footer-contact">Contact</a>
+  </div>
+  <div class="socials">
+    <a href="https://facebook.com/HungerHack" target="_blank" aria-label="Facebook" class="social-icon">
+      <svg width="24" height="24" fill="#ecf0f1" viewBox="0 0 24 24">
+        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.987h-2.54v-2.892h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.466h-1.26c-1.243 0-1.63.77-1.63 1.562v1.875h2.773l-.443 2.892h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/>
+      </svg>
+    </a>
+    <a href="https://instagram.com/HungerHackBD" target="_blank" aria-label="Instagram" class="social-icon">
+      <svg width="24" height="24" fill="#ecf0f1" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.75-1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
+      </svg>
+    </a>
+    <a href="https://youtube.com/@HungerHack" target="_blank" aria-label="YouTube" class="social-icon">
+      <svg width="24" height="24" fill="#ecf0f1" viewBox="0 0 24 24">
+        <path d="M19.8 7.2a2.31 2.31 0 00-1.63-1.63C16.79 5 12 5 12 5s-4.79 0-6.17.57a2.31 2.31 0 00-1.63 1.63A24.03 24.03 0 004 12a24.03 24.03 0 00.2 4.8 2.31 2.31 0 001.63 1.63C7.21 19 12 19 12 19s4.79 0 6.17-.57a2.31 2.31 0 001.63-1.63A24.03 24.03 0 0020 12a24.03 24.03 0 00-.2-4.8zM10 15.5v-7l6 3.5-6 3.5z"/>
+      </svg>
+    </a>
+  </div>
+  <div id="footer-credit">&copy; 2025 HungerHack | Designed to reduce food waste in Bangladesh</div>
+</footer>
+
+
+  <!-- Modal -->
+  <div id="feature-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+    <div class="modal-content" style="background:white; padding:20px; border-radius:10px; max-width:500px; width:90%;">
+      <h3 id="modal-title"></h3>
+      <div id="modal-body" style="margin-top:15px;"></div>
+      <button onclick="closeModal()" style="margin-top:15px;">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleLanguage() {
+      const current = document.querySelector('.language-toggle').textContent.trim();
+      if (current === "EN | বাংলা") {
+        document.querySelector('.language-toggle').textContent = "BN | English";
+        document.getElementById('tagline').textContent = "খাদ্য বাঁচান, পৃথিবী বাঁচান";
+        document.getElementById('hero-title').textContent = "আপনার খাদ্য অপচয় ট্র্যাক করুন";
+        document.getElementById('hero-desc').textContent = "খাদ্য অপচয় কমানোর সহজ উপায়গুলি আবিষ্কার করুন।";
+        document.getElementById('hero-btn').textContent = "শুরু করুন";
+      } else {
+        document.querySelector('.language-toggle').textContent = "EN | বাংলা";
+        document.getElementById('tagline').textContent = "Saving food, saving the planet";
+        document.getElementById('hero-title').textContent = "Track Your Food Waste";
+        document.getElementById('hero-desc').textContent = "Discover how easy it is to reduce food waste, manage your pantry smartly, and find new recipes with your leftovers.";
+        document.getElementById('hero-btn').textContent = "Get Started";
+      }
+    }
+
+    function searchContent() {
+      const searchInput = document.getElementById('search-input');
+      const query = searchInput.value.trim();
+      
+      if (query) {
+        alert(`Searching for: ${query}`);
+        animateSearchButton();
+      } else {
+        alert('Please enter a search term.');
+      }
+    }
+
+    function animateSearchButton() {
+      const button = document.querySelector('.search-bar button');
+      button.classList.add('clicked');
+      setTimeout(() => {
+        button.classList.remove('clicked');
+      }, 200);
+    }
+
+    // New feature actions
+    const featureActions = [
+      () => {
+        showModal("Food Waste Tracker", 
+          `<p>Log your food waste below:</p>
+          <input type="text" id="waste-item" placeholder="e.g., Bread, Rice" style="padding:8px; width:90%;">
+          <button onclick="addWaste()" style="margin-top:10px;">Log Waste</button>
+          <ul id="waste-list" style="margin-top:15px;"></ul>`
+        );
+      },
+      () => {
+        showModal("Smart Pantry", 
+          `<p>Add your pantry item:</p>
+          <input type="text" id="pantry-item" placeholder="e.g., Milk - 2025-05-01" style="padding:8px; width:90%;">
+          <button onclick="addPantry()" style="margin-top:10px;">Add Item</button>
+          <ul id="pantry-list" style="margin-top:15px;"></ul>`
+        );
+      },
+      () => {
+        showModal("Recipe Suggestions", 
+          `<p>Enter ingredients (comma separated):</p>
+          <input type="text" id="recipe-input" placeholder="e.g., tomato, egg" style="padding:8px; width:90%;">
+          <button onclick="getRecipes()" style="margin-top:10px;">Find Recipes</button>
+          <ul id="recipe-results" style="margin-top:15px;"></ul>`
+        );
+      },
+      () => {
+        showModal("Educational Tools", 
+          `<ul>
+            <li>✅ Store vegetables in breathable bags</li>
+            <li>✅ FIFO Rule: First In, First Out</li>
+            <li>✅ Freeze leftovers for another day</li>
+            <li>🎯 Try this: One-day No-Waste Challenge!</li>
+          </ul>`
+        );
+      }
+    ];
+
+    // Add click listeners to feature cards
+    document.querySelectorAll('.feature-card').forEach((card, index) => {
+      card.addEventListener('click', featureActions[index]);
+    });
+
+    function showModal(title, bodyContent) {
+      document.getElementById('modal-title').innerHTML = title;
+      document.getElementById('modal-body').innerHTML = bodyContent;
+      document.getElementById('feature-modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('feature-modal').style.display = 'none';
+    }
+
+    function addWaste() {
+      const val = document.getElementById("waste-item").value;
+      if (val) {
+        const li = document.createElement("li");
+        li.textContent = `🗑️ ${val}`;
+        document.getElementById("waste-list").appendChild(li);
+        document.getElementById("waste-item").value = "";
+      }
+    }
+
+    function addPantry() {
+      const val = document.getElementById("pantry-item").value;
+      if (val) {
+        const li = document.createElement("li");
+        li.textContent = `🧺 ${val}`;
+        document.getElementById("pantry-list").appendChild(li);
+        document.getElementById("pantry-item").value = "";
+      }
+    }
+
+    function getRecipes() {
+      const input = document.getElementById("recipe-input").value.toLowerCase();
+      const suggestions = {
+        "tomato,egg": ["Tomato Scrambled Eggs", "Egg Curry with Tomatoes"],
+        "rice,beans": ["Rice and Bean Salad", "Spicy Bean Stir Fry"]
+      };
+      const foundRecipes = suggestions[input] || ["No recipe found, try different ingredients"];
+      document.getElementById("recipe-results").innerHTML = foundRecipes.map(recipe => `<li>${recipe}</li>`).join("");
+    }
+    const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});fadeEls.forEach(el => observer.observe(el));
+//Testimonial start
+let testimonialIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const prevBtn = document.querySelector('.testimonial-nav.prev');
+const nextBtn = document.querySelector('.testimonial-nav.next');
+const dots = document.querySelectorAll('.testimonial-dots .dot');
+let carouselInterval;
+
+// Function to show testimonial by index
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+  });
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+  testimonialIndex = index;
+}
+
+// Show next testimonial
+function showNext() {
+  showTestimonial((testimonialIndex + 1) % testimonials.length);
+}
+
+// Show previous testimonial
+function showPrev() {
+  showTestimonial((testimonialIndex - 1 + testimonials.length) % testimonials.length);
+}
+
+// Start automatic carousel
+function startCarousel() {
+  carouselInterval = setInterval(showNext, 4000);
+}
+
+// Stop automatic carousel
+function stopCarousel() {
+  clearInterval(carouselInterval);
+}
+
+// Event listeners
+nextBtn.addEventListener('click', () => {
+  stopCarousel();
+  showNext();
+  startCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  stopCarousel();
+  showPrev();
+  startCarousel();
+});
+
+dots.forEach(dot => {
+  dot.addEventListener('click', (e) => {
+    stopCarousel();
+    showTestimonial(parseInt(e.target.dataset.index));
+    startCarousel();
+  });
+});
+
+// Pause carousel on hover
+const testimonialContainer = document.querySelector('.testimonial-container');
+testimonialContainer.addEventListener('mouseenter', stopCarousel);
+testimonialContainer.addEventListener('mouseleave', startCarousel);
+
+// Initialize
+showTestimonial(testimonialIndex);
+startCarousel();
+
+const counters = document.querySelectorAll('.counter');
+const speed = 100; // lower = faster
+
+function animateCounters() {
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      let count = +counter.innerText.replace(/,/g, '');
+      const increment = Math.ceil(target / speed);
+      const ease = (target - count) / 10;
+
+      if (count < target) {
+        count += Math.max(increment, Math.ceil(ease));
+        counter.innerText = Math.min(count, target).toLocaleString();
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+    updateCount();
+  });
+}
+
+// Observer code to trigger animation remains the same
+const statSection = document.querySelector('.stats');
+const observerStats = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    animateCounters();
+    observerStats.disconnect(); // Only run once
+  }
+}, { threshold: 0.5 });
+
+if (statSection) observerStats.observe(statSection);
+
+
+  </script>
+</body>
+</html>
