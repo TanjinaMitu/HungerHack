@@ -103,6 +103,7 @@
     <h2>Donate to HungerHack</h2>
     <p>Support our mission to reduce food waste and feed people in need across Bangladesh.</p>
 
+
     <!-- Donation Type -->
     <label for="donation-type">What would you like to donate?</label>
     <select id="donation-type" onchange="toggleDonationType()">
@@ -153,7 +154,18 @@
       <textarea id="pickup-location" rows="3" placeholder="Provide pickup address if you need assistance."></textarea>
     </div>
 
-    <button class="submit-btn">Donate Today!</button>
+    <p style="text-align:center; margin-top: 1rem;">
+  <a href="../Home_page/main.html">← Back to Home</a>
+</p>
+<button class="submit-btn" onclick="submitDonation()">Donate Today!</button>
+  </div>
+
+  <!-- Success Message Box -->
+  <div id="success-message" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(255,255,255,0.95); padding:2rem; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.2); text-align:center; max-width:400px;">
+    <h3 style="color:#4CAF50; margin-bottom:1rem;">Thank You for Your Donation!</h3>
+    <p style="margin-bottom:1.5rem;">Your generosity helps us fight hunger and reduce food waste.</p>
+    <p style="color:#666;">Would you like to make another donation to help more people?</p>
+    <button onclick="makeAnotherDonation()" style="background:#4CAF50; color:white; border:none; padding:0.5rem 1rem; border-radius:6px; margin-top:1rem; cursor:pointer;">Donate Again</button>
   </div>
 
   <script>
@@ -168,6 +180,48 @@
       const buttons = document.querySelectorAll(".amount-buttons button");
       buttons.forEach(btn => btn.classList.remove("active"));
       event.target.classList.add("active");
+    }
+
+    function validateDonation() {
+      const type = document.getElementById("donation-type").value;
+      
+      if (type === "money") {
+        const amount = document.getElementById("custom-amount").value;
+        if (!amount || amount <= 0) {
+          alert("Please enter a valid donation amount");
+          return false;
+        }
+      } else {
+        const quantity = document.getElementById("quantity").value;
+        const reason = document.getElementById("food-reason").value;
+        const location = document.getElementById("pickup-location").value;
+        
+        if (!quantity || !reason || !location) {
+          alert("Please fill in all required fields for food donation");
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function submitDonation() {
+      if (!validateDonation()) return;
+      
+      document.getElementById("success-message").style.display = "block";
+      
+      setTimeout(() => {
+        document.getElementById("success-message").style.display = "none";
+      }, 7000);
+    }
+
+    function makeAnotherDonation() {
+      document.getElementById("success-message").style.display = "none";
+      document.querySelector(".donate-container").scrollIntoView({ behavior: "smooth" });
+      
+      // Reset form
+      document.querySelector(".login-form").reset();
+      const buttons = document.querySelectorAll(".amount-buttons button");
+      buttons.forEach(btn => btn.classList.remove("active"));
     }
   </script>
 </body>
